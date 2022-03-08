@@ -50,7 +50,7 @@
                         {{ $value->address }}
                       </td>
                       <td>
-                        @endforeach
+
                         <a href="{{ url('admin/staffs/'.$value->id.'/edit') }}" class="btn btn-success">Edit</a>
                         </td>
                       <td>
@@ -59,6 +59,7 @@
                         <input type="hidden" name="_method" value="DELETE">
                         <button type="submit" class="btn btn-danger" >Hapus</button>
                         </form>
+                        @endforeach
                       </td>
                     </tr>
                   </tbody>

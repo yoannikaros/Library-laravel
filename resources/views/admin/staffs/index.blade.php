@@ -20,28 +20,38 @@
                       <th class="text-center">
                         #
                       </th>
-                      <th>Task Name</th>
-                      <th>Progress</th>
-                      <th>Members</th>
-                      <th>Due Date</th>
+                      <th>name</th>
+                      <th>username</th>
+                      <th>password</th>
+                      <th>nomor tlp</th>
+                      <th>alamat</th>
                       <th>Status</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach ($datanya as $key=>$value)
                     <tr>
                       <td>
-                        1
+                        {{ $value->id }}
                       </td>
-                      <td>Create a mobile app</td>
+                      <td> {{ $value->name }}</td>
                       <td>
-                        test
+                        {{ $value->username }}
                       </td>
                       <td>
-                        test
+                        {{ $value->password }}
                       </td>
-                      <td>2018-01-20</td>
                       <td>
+                        {{ $value->phone_number }}
+                      </td>
+                      <td>
+                        {{ $value->address }}
+                      </td>
+                      <td>
+
+
+                        @endforeach
                         <div class="badge badge-success">Completed</div>
                       </td>
                       <td><a href="#" class="btn btn-secondary">Detail</a></td>

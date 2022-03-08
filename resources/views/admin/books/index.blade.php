@@ -40,7 +40,7 @@
                       <td>
                         {{ $value->publisher }}
                       </td>
-                      <td> {{ $value->published_datephp }}</td>
+                      <td> {{ $value->published_date }}</td>
                       <td>
                         <div class="badge badge-success">Completed</div>
                       </td>

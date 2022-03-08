@@ -664,7 +664,9 @@ $(function () {
         locale: {
           format: 'YYYY-MM-DD'
         },
-        singleDatePicker: true
+        singleDatePicker: true,
+        drops: 'up',
+        autoApply: true
       });
     }
 

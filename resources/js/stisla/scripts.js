@@ -585,6 +585,8 @@ $(function() {
       $('.datepicker').daterangepicker({
         locale: {format: 'YYYY-MM-DD'},
         singleDatePicker: true,
+        drops: 'up',
+        autoApply: true,
       });
     }
     if($(".datetimepicker").length) {

@@ -50,11 +50,16 @@
                         {{ $value->address }}
                       </td>
                       <td>
-
-
                         @endforeach
-                        <a href="{{ url('admin/staffs/'.$value->id.'/edit') }}" class="btn btn-success">Edit</a>                      </td>
-                      <td><a href="#" class="btn btn-danger">Hapus</a></td>
+                        <a href="{{ url('admin/staffs/'.$value->id.'/edit') }}" class="btn btn-success">Edit</a>
+                        </td>
+                      <td>
+                        <form action="{{ url('admin/staffs/'.$value->id) }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger" >Hapus</button>
+                        </form>
+                      </td>
                     </tr>
                   </tbody>
                 </table>

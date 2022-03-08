@@ -46,7 +46,7 @@ class StaffController extends Controller
     $model->phone_number = $request->phone_number;
     $model->address = $request->address;
     $model->save();
-    return redirect('staffs.index');
+    return redirect('/admin/staffs');
     }
 
     /**
@@ -99,6 +99,9 @@ class StaffController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $model = staff::find($id);
+        $model->delete();
+        return redirect('/admin/staffs');
+
     }
 }

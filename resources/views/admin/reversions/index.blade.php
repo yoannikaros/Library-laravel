@@ -16,14 +16,16 @@
               <div class="table-responsive">
                 <table class="table table-striped" id="table-1">
                   <thead>
+                    @foreach ($collection as $item)
+
+
                     <tr>
                       <th class="text-center">
                         #
                       </th>
-                      <th>Task Name</th>
-                      <th>Progress</th>
-                      <th>Members</th>
-                      <th>Due Date</th>
+                      <th>testung</th>
+                      <th>du</th>
+                      <th>lalala</th>
                       <th>Status</th>
                       <th>Action</th>
                     </tr>
@@ -31,21 +33,21 @@
                   <tbody>
                     <tr>
                       <td>
-                        1
+                        {{ $id }}
                       </td>
-                      <td>Create a mobile app</td>
+                      <td> {{ $code }}</td>
                       <td>
-                        test
+                        {{ $created_at }}
                       </td>
                       <td>
-                        test
+                        {{ $updated_at }}
                       </td>
-                      <td>2018-01-20</td>
                       <td>
                         <div class="badge badge-success">Completed</div>
                       </td>
                       <td><a href="#" class="btn btn-secondary">Detail</a></td>
                     </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div>

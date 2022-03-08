@@ -17,12 +17,14 @@
                 <table class="table table-striped" id="table-1">
                   <thead>
                     <tr>
+                      @foreach ($reservasi as $key => $value)
+
+
                       <th class="text-center">
                         #
                       </th>
                       <th>Task Name</th>
                       <th>Progress</th>
-                      <th>Members</th>
                       <th>Due Date</th>
                       <th>Status</th>
                       <th>Action</th>
@@ -31,21 +33,21 @@
                   <tbody>
                     <tr>
                       <td>
-                        1
+                        {{ $key + 1 }}
                       </td>
-                      <td>Create a mobile app</td>
+                      <td>{{ $value->code }}</td>
                       <td>
-                        test
+                        {{ $value->created_at }}
                       </td>
                       <td>
-                        test
+                        {{ $value->updated_at }}
                       </td>
-                      <td>2018-01-20</td>
                       <td>
                         <div class="badge badge-success">Completed</div>
                       </td>
                       <td><a href="#" class="btn btn-secondary">Detail</a></td>
                     </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div>

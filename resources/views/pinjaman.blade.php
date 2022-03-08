@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('login')
+@section('content')
 
 <style type="text/css">
   .kotak{

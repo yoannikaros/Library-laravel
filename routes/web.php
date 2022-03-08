@@ -28,7 +28,7 @@ Route::prefix('admin')->group(function () {
 
 
 Route::get('/pinjaman', function () {
-    return view('/books/pinjaman',[
+    return view('/pinjaman',[
         "judul" => "pinjaman"
     ]);
 });

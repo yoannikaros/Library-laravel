@@ -17,18 +17,17 @@
                 <table class="table table-striped" id="table-1">
                   <thead>
                     <tr>
-                      @foreach ($reservasi as $key => $value)
-
 
                       <th class="text-center">
                         #
                       </th>
-                      <th>Task Name</th>
-                      <th>Progress</th>
-                      <th>Due Date</th>
+                      <th>Tes</th>
+                      <th>dudung</th>
+                      <th>tak</th>
                       <th>Status</th>
                       <th>Action</th>
                     </tr>
+                    @foreach ($reservasi as $key => $value)
                   </thead>
                   <tbody>
                     <tr>

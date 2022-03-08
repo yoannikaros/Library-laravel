@@ -68,7 +68,8 @@ class StaffController extends Controller
      */
     public function edit($id)
     {
-        //
+        $model = Staff::find($id);
+        return view('admin.staffs.edit',compact('model'));
     }
 
     /**
@@ -80,7 +81,14 @@ class StaffController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $model = staff ::find($id);
+        $model->name = $request->name;
+        $model->username = $request->username;
+        $model->password = $request->password;
+        $model->phone_number = $request->phone_number;
+        $model->address = $request->address;
+        $model->save();
+        return redirect('/admin/staffs');
     }
 
     /**

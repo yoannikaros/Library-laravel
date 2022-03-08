@@ -26,7 +26,7 @@
                       <th>password</th>
                       <th>nomor tlp</th>
                       <th>alamat</th>
-                      <th>Status</th>
+                      <th>Action</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -53,9 +53,8 @@
 
 
                         @endforeach
-                        <div class="badge badge-success">Completed</div>
-                      </td>
-                      <td><a href="#" class="btn btn-secondary">Detail</a></td>
+                        <a href="{{ url('admin/staffs/'.$value->id.'/edit') }}" class="btn btn-success">Edit</a>                      </td>
+                      <td><a href="#" class="btn btn-danger">Hapus</a></td>
                     </tr>
                   </tbody>
                 </table>

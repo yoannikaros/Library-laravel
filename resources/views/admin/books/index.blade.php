@@ -20,7 +20,6 @@
                       <th class="text-center">
                         #
                       </th>
-                      <th>Id</th>
                       <th>Judul</th>
                       <th>Penulis</th>
                       <th>Penerbit</th>

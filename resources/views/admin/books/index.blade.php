@@ -23,29 +23,26 @@
                       <th>Judul</th>
                       <th>Penulis</th>
                       <th>Penerbit</th>
-                      <th>Waktu</th>
-                      <th>Action</th>
+                      <th>Tanggal Terbit</th>
+                      <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach ($data as $key=>$value)
-                    <tr>
-                      <td>
-                        {{ $value->id }}
-                      </td>
-                      <td> {{ $value->title }}</td>
-                      <td>
-                        {{ $value->author }}
-                      </td>
-                      <td>
-                        {{ $value->publisher }}
-                      </td>
-                      <td> {{ $value->published_date }}</td>
-                      <td>
-                        <div class="badge badge-success">Completed</div>
-                      </td>
-                      <td><a href="#" class="btn btn-secondary">Detail</a></td>
-                    </tr>
+                    @foreach ($data as $key => $value)
+                      <tr>
+                        <td>
+                          {{ $key + 1 }}
+                        </td>
+                        <td> {{ $value->title }}</td>
+                        <td>
+                          {{ $value->author }}
+                        </td>
+                        <td>
+                          {{ $value->publisher }}
+                        </td>
+                        <td> {{ $value->publication_date }}</td>
+                        <td><a href="#" class="btn btn-secondary">Detail</a></td>
+                      </tr>
                     @endforeach
                   </tbody>
                 </table>

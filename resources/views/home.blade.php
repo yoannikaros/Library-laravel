@@ -14,6 +14,7 @@
 
 <div class="kotak">
 <h1>Tes bro</h1>
+<h2>Tes bro</h2>
 </div>
 
 @endsection

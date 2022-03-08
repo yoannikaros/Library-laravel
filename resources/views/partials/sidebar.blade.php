@@ -9,18 +9,18 @@
 
     <li class="menu-header">Staff</li>
     <li class="{{ request()->routeIs('dashboard') ? 'active' : '' }}"><a class="nav-link" href="{{ route('dashboard') }}"><i
-          class="fas fa-columns"></i> <span>Dashboard</span></a></li>
+          class="fas fa-columns"></i> <span>Dasbor</span></a></li>
     <li class="{{ request()->routeIs('books.index') ? 'active' : '' }}"><a href="{{ route('books.index') }}"><i
-          class="fas fa-book"></i> <span>Books</span></a></li>
+          class="fas fa-book"></i> <span>Buku</span></a></li>
     <li class="{{ request()->routeIs('staffs.index') ? 'active' : '' }}"><a href="{{ route('staffs.index') }}"><i
-          class="fas fa-people-carry"></i> <span>Staff Management</span></a></li>
+          class="fas fa-people-carry"></i> <span>Manajemen Staf</span></a></li>
 
     <li class="menu-header">Member</li>
     <li class="{{ request()->routeIs('reservations.index') ? 'active' : '' }}">
-      <a href="{{ route('reservations.index') }}"><i class="fas fa-book-open"></i> <span>Reservations</span></a>
+      <a href="{{ route('reservations.index') }}"><i class="fas fa-book-open"></i> <span>Peminjaman</span></a>
     </li>
     <li class="{{ request()->routeIs('reversions.index') ? 'active' : '' }}"><a
         href="{{ route('reversions.index') }}"><i class="fas fa-school"></i>
-        <span>Reversion</span></a></li>
+        <span>Pengembalian</span></a></li>
   </ul>
 </aside>

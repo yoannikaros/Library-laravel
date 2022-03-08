@@ -36,6 +36,8 @@ __webpack_require__(/*! datatables.net-bs4 */ "./node_modules/datatables.net-bs4
 
 __webpack_require__(/*! jquery.nicescroll */ "./node_modules/jquery.nicescroll/jquery.nicescroll.js");
 
+__webpack_require__(/*! bootstrap-daterangepicker */ "./node_modules/bootstrap-daterangepicker/daterangepicker.js");
+
 __webpack_require__(/*! ./stisla/stisla */ "./resources/js/stisla/stisla.js");
 
 __webpack_require__(/*! ./stisla/scripts */ "./resources/js/stisla/scripts.js");

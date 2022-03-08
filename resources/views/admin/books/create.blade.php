@@ -11,47 +11,40 @@
     <div class="section-body">
       <div class="card">
         <div class="card-body">
-          <form class="row">
+          <form class="row" method="POST" action="{{ route('books.store') }}">
+            @csrf
+            <div class="col-12">
+              <div class="form-group">
+                <label for="title">Judul Buku</label>
+                <input id="title" type="text" name="title" class="form-control">
+              </div>
+            </div>
             <div class="col-12 col-md-6 col-lg-6">
               <div class="form-group">
-                <label>Kode Buku</label>
-                <input type="text" name="code" class="form-control">
+                <label for="author">Pengarang</label>
+                <input id="author" type="text" name="author" class="form-control">
               </div>
 
               <div class="form-group">
-                <label>Judul Buku</label>
-                <input type="text" name="title" class="form-control">
-              </div>
-
-
-              <div class="form-group">
-                <label>Pengarang</label>
-                <input type="text" name="pengarang" class="form-control">
+                <label for="publication_date">Tanggal terbit</label>
+                <input class="form-control datepicker" type="text" name="publication_date" id="publication_date">
               </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-6">
               <div class="form-group">
-                <label>Penerbit</label>
-                <input type="text" name="penerbit" class="form-control">
+                <label for="publisher">Penerbit</label>
+                <input id="publisher" type="text" name="publisher" class="form-control">
               </div>
 
 
               <div class="form-group">
-                <label>Jumlah stok</label>
-                <input type="text" name="stok" class="form-control">
+                <label for="stock">Jumlah stok</label>
+                <input id="stock" type="text" name="stock" class="form-control">
               </div>
 
 
-              <div class="form-group">
-                <label for="published">Tahun terbit</label>
-                <select id="published" class="form-control" aria-label="Default select example">
-                  <option value="1">2020</option>
-                  <option value="2">2021</option>
-                  <option value="2" selected>2022</option>
-                </select>
-              </div>
-              <button class="btn btn-primary float-right">Submit</button>
+              <button class="btn btn-primary float-right" type="submit">Tambah</button>
             </div>
           </form>
         </div>

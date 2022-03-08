@@ -16,8 +16,6 @@
               <div class="table-responsive">
                 <table class="table table-striped" id="table-1">
                   <thead>
-                    @foreach ($collection as $item)
-
 
                     <tr>
                       <th class="text-center">
@@ -29,18 +27,20 @@
                       <th>Status</th>
                       <th>Action</th>
                     </tr>
+                    @foreach ($reversions as $key => $value)
+
                   </thead>
                   <tbody>
                     <tr>
                       <td>
-                        {{ $id }}
+                        {{ $key + 1 }}
                       </td>
-                      <td> {{ $code }}</td>
+                      <td>{{ $value->code }}</td>
                       <td>
-                        {{ $created_at }}
+                        {{ $value->created_at }}
                       </td>
                       <td>
-                        {{ $updated_at }}
+                        {{ $value->updated_at }}
                       </td>
                       <td>
                         <div class="badge badge-success">Completed</div>

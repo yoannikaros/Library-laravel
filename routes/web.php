@@ -40,8 +40,8 @@ Route::get('/petugas', function () {
     ]);
 });
 
-Route::get('/inputbuku', function () {
-    return view('inputbuku',[
+Route::get('/books/create', function () {
+    return view('/books/create',[
         "judul" => "inputbuku"
     ]);
 });

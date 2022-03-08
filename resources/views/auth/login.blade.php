@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('login')
+@section('content')
     <div class="kotaklogin">
         <p class="tulisan_login">Silahkan login</p>
 

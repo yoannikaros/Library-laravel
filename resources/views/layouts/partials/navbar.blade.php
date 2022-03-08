@@ -7,7 +7,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-link" aria-current="page" href="/">Beranda</a>
-          <a class="nav-link" aria-current="page" href="/inputbuku">Input buku</a>
+          <a class="nav-link" aria-current="page" href="/books/create">Input buku</a>
 
         </div>
 

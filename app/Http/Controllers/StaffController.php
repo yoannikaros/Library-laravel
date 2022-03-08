@@ -28,8 +28,7 @@ class StaffController extends Controller
      */
     public function create()
     {
-        //
-    }
+        return view('admin.staffs.create');    }
 
     /**
      * Store a newly created resource in storage.

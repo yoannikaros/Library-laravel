@@ -5,7 +5,8 @@
 @section('content')
   <section class="section">
     <div class="section-header">
-      <h1>List Staff</h1>
+      <h1 class="mr-auto">List Staff</h1>
+      <a href="{{ route('staffs.create') }}" class="btn btn-primary">Tambah Staff</a>
     </div>
 
     <div class="section-body">

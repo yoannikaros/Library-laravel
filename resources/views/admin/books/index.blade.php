@@ -20,32 +20,34 @@
                       <th class="text-center">
                         #
                       </th>
-                      <th>Task Name</th>
-                      <th>Progress</th>
-                      <th>Members</th>
-                      <th>Due Date</th>
-                      <th>Status</th>
+                      <th>Id</th>
+                      <th>Judul</th>
+                      <th>Penulis</th>
+                      <th>Penerbit</th>
+                      <th>Waktu</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach ($data as $key=>$value)
                     <tr>
                       <td>
-                        1
+                        {{ $value->id }}
                       </td>
-                      <td>Create a mobile app</td>
+                      <td> {{ $value->title }}</td>
                       <td>
-                        test
+                        {{ $value->author }}
                       </td>
                       <td>
-                        test
+                        {{ $value->publisher }}
                       </td>
-                      <td>2018-01-20</td>
+                      <td> {{ $value->published_datephp }}</td>
                       <td>
                         <div class="badge badge-success">Completed</div>
                       </td>
                       <td><a href="#" class="btn btn-secondary">Detail</a></td>
                     </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div>

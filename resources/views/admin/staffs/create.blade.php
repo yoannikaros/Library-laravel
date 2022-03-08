@@ -10,24 +10,24 @@
     <div class="section-body">
       <div class="card">
         <div class="card-body">
-          <form class="row" method="POST" action="{{ route('books.store') }}">
+          <form class="row" method="POST" action="{{ route('staffs.store') }}">
             @csrf
             <div class="col-12">
               <div class="form-group">
                 <label for="title">Nama</label>
-                <input id="title" type="text" name="title" class="form-control">
+                <input id="title" type="text" name="name" class="form-control">
 
                 <label for="author">username</label>
-                <input id="author" type="text" name="author" class="form-control">
+                <input id="author" type="text" name="username" class="form-control">
 
                   <label for="author">passwowrd</label>
-                  <input id="author" type="password" name="author" class="form-control">
+                  <input id="author" type="password" name="password" class="form-control">
 
                     <label for="author">nomor telepon</label>
-                    <input id="author" type="text" name="author" class="form-control">
+                    <input id="author" type="text" name="phone_number" class="form-control">
 
                       <label for="author">alamat</label>
-                      <input id="author" type="text" name="author" class="form-control">
+                      <input id="author" type="text" name="address" class="form-control">
                     </div>
 
 

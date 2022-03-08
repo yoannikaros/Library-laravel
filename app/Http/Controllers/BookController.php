@@ -19,7 +19,8 @@ class BookController extends Controller
 
     public function create()
     {
-        return view('admin.books.create');
+        $model = new Book;
+        return view('admin.books.create',compact('model'));
     }
 
     public function store(Request $request)

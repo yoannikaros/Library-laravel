@@ -28,7 +28,8 @@ class StaffController extends Controller
      */
     public function create()
     {
-        return view('admin.staffs.create');    }
+        $model = new Staff;
+        return view('admin.staffs.create',compact('model'));    }
 
     /**
      * Store a newly created resource in storage.
@@ -38,7 +39,14 @@ class StaffController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    $model = new staff;
+    $model->name = $request->name;
+    $model->username = $request->username;
+    $model->password = $request->password;
+    $model->phone_number = $request->phone_number;
+    $model->address = $request->address;
+    $model->save();
+    return redirect('staffs.index');
     }
 
     /**

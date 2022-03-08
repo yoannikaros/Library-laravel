@@ -21,9 +21,9 @@
                       <th class="text-center">
                         #
                       </th>
-                      <th>Tes</th>
-                      <th>dudung</th>
-                      <th>tak</th>
+                      <th>Nomor</th>
+                      <th>Pemesanan</th>
+                      <th>Update</th>
                       <th>Status</th>
                       <th>Action</th>
                     </tr>

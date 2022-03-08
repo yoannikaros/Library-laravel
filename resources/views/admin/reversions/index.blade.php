@@ -21,9 +21,9 @@
                       <th class="text-center">
                         #
                       </th>
-                      <th>testung</th>
-                      <th>du</th>
-                      <th>lalala</th>
+                      <th>Nomor</th>
+                      <th>Pemesanan</th>
+                      <th>Update</th>
                       <th>Status</th>
                       <th>Action</th>
                     </tr>

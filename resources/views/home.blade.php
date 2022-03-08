@@ -13,7 +13,7 @@
 </style>
 
 <div class="kotak">
-<h1>Tes bro</h1>
+<h1>hehe</h1>
 </div>
 
 @endsection

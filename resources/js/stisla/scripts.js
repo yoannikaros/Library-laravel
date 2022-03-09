@@ -587,6 +587,7 @@ $(function() {
         singleDatePicker: true,
         drops: 'up',
         autoApply: true,
+        showDropdowns: true
       });
     }
     if($(".datetimepicker").length) {

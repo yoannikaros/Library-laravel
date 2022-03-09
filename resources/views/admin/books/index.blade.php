@@ -42,7 +42,18 @@
                           {{ $value->publisher }}
                         </td>
                         <td> {{ $value->publication_date }}</td>
-                        <td><a href="#" class="btn btn-secondary">Detail</a></td>
+                        <td class="d-flex">
+                          <a href="{{ route('books.edit', $value->id) }}" class="btn btn-icon btn-warning">
+                            <i class="fa fa-edit"></i>
+                          </a>
+                          <form class="d-inline ml-1" action="{{ route('books.destroy', $value->id) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-action btn-danger">
+                              <i class="fa fa-trash"></i>
+                            </button>
+                          </form>
+                        </td>
                       </tr>
                     @endforeach
                   </tbody>

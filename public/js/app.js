@@ -666,7 +666,8 @@ $(function () {
         },
         singleDatePicker: true,
         drops: 'up',
-        autoApply: true
+        autoApply: true,
+        showDropdowns: true
       });
     }
 

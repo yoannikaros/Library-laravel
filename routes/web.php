@@ -37,3 +37,4 @@ Route::prefix('admin')->group(function () {
 Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
 Route::get('/register', [AuthController::class, 'register'])->name('register')->middleware('guest');
 
+//route beranda,peminjaman,book untuk member

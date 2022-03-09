@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\akukontroler;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ReversionController;
 use App\Http\Controllers\StaffController;
@@ -32,6 +33,7 @@ Route::prefix('admin')->group(function () {
     Route::resource('reservations', ReservationController::class);
     Route::resource('reversions', ReversionController::class);
     Route::resource('staffs', StaffController::class)->except('show');
+    Route::resource('members', MemberController::class);
 });
 
 Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');

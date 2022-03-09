@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'List Staff')
+@section('title', 'List Anggota')
 
 @section('content')
   <section class="section">
     <div class="section-header">
       <h1 class="mr-auto">List Anggota</h1>
-      <a href="{{ route('staffs.create') }}" class="btn btn-primary">Tambah Anggota</a>
+      <a href="{{ route('members.create') }}" class="btn btn-primary">Tambah Anggota</a>
     </div>
 
     <div class="section-body">
@@ -22,33 +22,34 @@
                         #
                       </th>
                       <th>Nama</th>
-                      <th>Username</th>
+                      <th>Email</th>
                       <th>Nomor Telpon</th>
                       <th>Alamat</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach ($datanya as $key => $value)
+                    @foreach ($members as $key => $member)
                       <tr>
                         <td>
-                          {{ $value->id }}
+                          {{ $member->id }}
                         </td>
-                        <td> {{ $value->name }}</td>
+                        <td> {{ $member->name }}</td>
                         <td>
-                          {{ $value->username }}
-                        </td>
-                        <td>
-                          {{ $value->phone_number }}
+                          {{ $member->email }}
                         </td>
                         <td>
-                          {{ $value->address }}
+                          {{ $member->phone_number }}
+                        </td>
+                        <td>
+                          {{ $member->address }}
                         </td>
                         <td class="d-flex">
-                          <a href="{{ route('staffs.edit', $value->id) }}" class="btn btn-icon btn-warning">
+                          <a href="{{ route('members.edit', $member->id) }}" class="btn btn-icon btn-warning">
                             <i class="fa fa-edit"></i>
                           </a>
-                          <form class="d-inline ml-1" action="{{ route('staffs.destroy', $value->id) }}" method="POST">
+                          <form class="d-inline ml-1" action="{{ route('members.destroy', $member->id) }}"
+                            method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-action btn-danger">

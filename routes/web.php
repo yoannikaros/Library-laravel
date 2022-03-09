@@ -33,7 +33,7 @@ Route::prefix('admin')->group(function () {
     Route::resource('reservations', ReservationController::class);
     Route::resource('reversions', ReversionController::class);
     Route::resource('staffs', StaffController::class)->except('show');
-    Route::resource('members', MemberController::class);
+    Route::resource('members', MemberController::class)->except('show');
 });
 
 Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');

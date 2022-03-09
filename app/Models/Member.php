@@ -10,4 +10,13 @@ class Member extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+    protected $hidden = [
+        'password',
+    ];
+
+    public static function boot()
+    {
+        parent::boot();
+        static::creating(fn ($model) => $model->password = bcrypt($model->password));
+    }
 }

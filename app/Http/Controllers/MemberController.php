@@ -7,79 +7,67 @@ use Illuminate\Http\Request;
 
 class MemberController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $members = Member::all();
+        return view('admin.members.index', compact('members'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-        //
+        return view('admin.members.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        //
+        $memberData = $request->validate([
+            'name' => 'required',
+            'email' => 'required|unique:members',
+            'password' => 'required',
+            'phone_number' => '',
+            'address' => ''
+        ]);
+
+        Member::create($memberData);
+
+        return redirect(route('members.index'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Member  $member
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Member $member)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Member  $member
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Member $member)
     {
-        //
+        return view('admin.members.edit', compact('member'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Member  $member
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Member $member)
     {
-        //
+        $memberData = $request->validate([
+            'name' => 'required',
+            'email' => "required|unique:members,email,$member->id",
+            'password' => '',
+            'phone_number' => '',
+            'address' => ''
+        ]);
+
+
+        if (!$request->password) {
+            $request->password = $member->password;
+        } else {
+            $request->password = bcrypt($request->password);
+        }
+
+        $memberData['password'] = $request->password;
+
+        $member->update($memberData);
+
+        return redirect(route('members.index'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Member  $member
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(Member $member)
     {
-        //
+        $member->delete();
+        return redirect(route('members.index'));
     }
 }

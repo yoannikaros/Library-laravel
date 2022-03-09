@@ -10,29 +10,37 @@
     <div class="section-body">
       <div class="card">
         <div class="card-body">
-          <form class="row" method="POST" action="{{ url('admin/staffs/'.$model->id) }}">
+          <form class="row" method="POST" action="{{ route('staffs.update', $staff->id) }}">
             @csrf
+            @method('PUT')
             <div class="col-12">
               <div class="form-group">
-                <input type="hidden" name="_method" value="PATCH">
-                <label for="title">Nama</label>
-                <input id="title" type="text" name="name" value="{{ $model->name }}" class="form-control">
+                <label for="name">Nama</label>
+                <input id="name" value="{{ $staff->name }}" type="text" name="name" class="form-control">
+              </div>
 
-                <label for="author">username</label>
-                <input id="author" type="text" name="username" value="{{ $model->username }}" class="form-control">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input id="username" value="{{ $staff->username }}" type="text" name="username" class="form-control">
+              </div>
 
-                  <label for="author">passwowrd</label>
-                  <input id="author" type="password" name="password" value="{{ $model->password }}" class="form-control">
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" type="password" name="password" class="form-control">
+              </div>
 
-                    <label for="author">nomor telepon</label>
-                    <input id="author" type="text" name="phone_number" value="{{ $model->phone_number }}" class="form-control">
+              <div class="form-group">
+                <label for="phone_number">Nomor Telepon</label>
+                <input id="phone_number" value="{{ $staff->phone_number }}" type="text" name="phone_number"
+                  class="form-control">
+              </div>
 
-                      <label for="author">alamat</label>
-                      <input id="author" type="text" name="address" value="{{ $model->address }}" class="form-control">
-                    </div>
+              <div class="form-group">
+                <label for="address">Alamat</label>
+                <input id="address" value="{{ $staff->address }}" type="text" name="address" class="form-control">
+              </div>
 
-
-              <button class="btn btn-primary float-right" type="submit">Update</button>
+              <button class="btn btn-primary float-right" type="submit">Ubah</button>
             </div>
           </form>
         </div>

@@ -21,47 +21,43 @@
                       <th class="text-center">
                         #
                       </th>
-                      <th>name</th>
-                      <th>username</th>
-                      <th>password</th>
-                      <th>nomor tlp</th>
-                      <th>alamat</th>
-                      <th>Action</th>
-                      <th>Action</th>
+                      <th>Nama</th>
+                      <th>Username</th>
+                      <th>Nomor Telpon</th>
+                      <th>Alamat</th>
+                      <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach ($datanya as $key=>$value)
-                    <tr>
-                      <td>
-                        {{ $value->id }}
-                      </td>
-                      <td> {{ $value->name }}</td>
-                      <td>
-                        {{ $value->username }}
-                      </td>
-                      <td>
-                        {{ $value->password }}
-                      </td>
-                      <td>
-                        {{ $value->phone_number }}
-                      </td>
-                      <td>
-                        {{ $value->address }}
-                      </td>
-                      <td>
-
-                        <a href="{{ url('admin/staffs/'.$value->id.'/edit') }}" class="btn btn-success">Edit</a>
+                    @foreach ($datanya as $key => $value)
+                      <tr>
+                        <td>
+                          {{ $value->id }}
                         </td>
-                      <td>
-                        <form action="{{ url('admin/staffs/'.$value->id) }}" method="POST">
-                        @csrf
-                        <input type="hidden" name="_method" value="DELETE">
-                        <button type="submit" class="btn btn-danger" >Hapus</button>
-                        </form>
-                        @endforeach
-                      </td>
-                    </tr>
+                        <td> {{ $value->name }}</td>
+                        <td>
+                          {{ $value->username }}
+                        </td>
+                        <td>
+                          {{ $value->phone_number }}
+                        </td>
+                        <td>
+                          {{ $value->address }}
+                        </td>
+                        <td class="d-flex">
+                          <a href="{{ route('staffs.edit', $value->id) }}" class="btn btn-icon btn-warning">
+                            <i class="fa fa-edit"></i>
+                          </a>
+                          <form class="d-inline ml-1" action="{{ route('staffs.destroy', $value->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-action btn-danger">
+                              <i class="fa fa-trash"></i>
+                            </button>
+                          </form>
+                        </td>
+                      </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div>

@@ -10,4 +10,15 @@ class Staff extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+    protected $table = 'staffs';
+
+    protected $hidden = [
+        'password',
+    ];
+
+    public static function boot()
+    {
+        parent::boot();
+        static::creating(fn ($model) => $model->password = bcrypt($model->password));
+    }
 }

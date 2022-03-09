@@ -19,7 +19,7 @@ class CreateStaffsTable extends Migration
             $table->string('username', 50)->unique();
             $table->string('password', 100);
             $table->string('phone_number', 50)->nullable();
-            $table->string('address', 60)->nullable();
+            $table->string('address', 100)->nullable();
             $table->timestamps();
         });
     }

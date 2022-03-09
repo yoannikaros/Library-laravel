@@ -3,9 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Hash;
 
-class Member extends Model
+class Member extends Authenticatable
 {
     use HasFactory;
 
@@ -17,6 +18,6 @@ class Member extends Model
     public static function boot()
     {
         parent::boot();
-        static::creating(fn ($model) => $model->password = bcrypt($model->password));
+        static::creating(fn ($model) => $model->password = Hash::make($model->password));
     }
 }

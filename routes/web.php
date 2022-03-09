@@ -41,13 +41,18 @@ Route::get('/register', [AuthController::class, 'register'])->name('register')->
 
 //route beranda,peminjaman,book untuk member
 Route::get('/beranda', function () {
-    return view('member.beranda');
+    return view('member.beranda',[
+        'title => beranda'
+    ]);
 });
 
 Route::get('/riwayat', function () {
-    return view('member.history');
+    return view('member.history',[
+        'title => history']);
 });
 
 Route::get('/peminjaman', function () {
-    return view('member.peminjaman');
+    return view('member.peminjaman',[
+        'title => peminjaman'
+    ]);
 });

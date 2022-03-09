@@ -8,16 +8,16 @@
   <ul class="sidebar-menu">
 
     <li class="menu-header">Member</li>
-    <li class="{{ request()->routeIs('members.*') ? 'active' : '' }}"><a
+    <li class="{{ request()->routeIs('title') ? 'active' : '' }}"><a
       href="/beranda"><i class="fas fa-user-friends"></i>
       <span>Beranda</span></a></li>
 
-    <li class="{{ request()->routeIs('reservations.*') ? 'active' : '' }}">
+    <li class="{{ request()->routeIs('title') ? 'active' : '' }}">
       <a href="/peminjaman"><i class="fas fa-book-open"></i> <span>Peminjaman</span></a>
     </li>
 
 
-    <li class="{{ request()->routeIs('reservations.*') ? 'active' : '' }}">
+    <li class="{{ request()->routeIs('title') ? 'active' : '' }}">
       <a href="/riwayat"><i class="fas fa-book-open"></i> <span>Riwayat</span></a>
     </li>
 

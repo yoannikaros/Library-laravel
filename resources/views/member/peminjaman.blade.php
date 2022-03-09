@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.member.app')
 
-@section('title', 'Admin Dashboard')
+@section('title', 'Member Dashboard')
 @section('content')
 
   <section class="section">

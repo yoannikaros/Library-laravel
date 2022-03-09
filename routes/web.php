@@ -29,10 +29,9 @@ Route::prefix('admin')->group(function () {
     Route::get('/login', [AdminController::class, 'login'])->middleware('guest')->name('adminLogin');
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     Route::resource('books', BookController::class);
-    Route::resource('books', BookController::class);
     Route::resource('reservations', ReservationController::class);
     Route::resource('reversions', ReversionController::class);
-    Route::resource('staffs', StaffController::class);
+    Route::resource('staffs', StaffController::class)->except('show');
 });
 
 Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');

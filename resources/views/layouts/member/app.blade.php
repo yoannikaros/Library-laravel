@@ -4,7 +4,7 @@
   <div class="main-wrapper">
     <div class="navbar-bg"></div>
     <nav class="navbar navbar-expand-lg main-navbar">
-      @include('partials.topnav')
+      @include('partials.topnavmember')
     </nav>
     <div class="main-sidebar">
       @include('partials.sidebarmember')

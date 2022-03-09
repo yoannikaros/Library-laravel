@@ -40,3 +40,14 @@ Route::get('/login', [AuthController::class, 'login'])->name('login')->middlewar
 Route::get('/register', [AuthController::class, 'register'])->name('register')->middleware('guest');
 
 //route beranda,peminjaman,book untuk member
+Route::get('/beranda', function () {
+    return view('member.beranda');
+});
+
+Route::get('/book', function () {
+    return view('member.book');
+});
+
+Route::get('/peminjaman', function () {
+    return view('member.peminjaman');
+});

@@ -44,8 +44,8 @@ Route::get('/beranda', function () {
     return view('member.beranda');
 });
 
-Route::get('/book', function () {
-    return view('member.book');
+Route::get('/riwayat', function () {
+    return view('member.history');
 });
 
 Route::get('/peminjaman', function () {

@@ -17,5 +17,10 @@
     </li>
 
 
+    <li class="{{ request()->routeIs('reservations.*') ? 'active' : '' }}">
+      <a href="/riwayat"><i class="fas fa-book-open"></i> <span>Riwayat</span></a>
+    </li>
+
+
   </ul>
 </aside>

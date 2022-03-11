@@ -14,8 +14,10 @@ class CreateReversionsTable extends Migration
     public function up()
     {
         Schema::create('reversions', function (Blueprint $table) {
-            $table->id();
-            $table->string('code', 10)->nullable();
+            $table->unsignedBigInteger('reservation_id')->primary();
+            $table->string('code', 10)->unique()->nullable();
+            $table->unsignedBigInteger('staff_id');
+            $table->date('return_date');
             $table->timestamps();
         });
     }

@@ -15,7 +15,12 @@ class CreateReservationsTable extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
-            $table->string('code')->unique()->nullable();
+            $table->string('code', 10)->unique()->nullable();
+            $table->unsignedBigInteger('member_id');
+            $table->unsignedBigInteger('staff_id');
+            $table->date('reservation_date')->default(now());
+            $table->date('reversion_date');
+            $table->enum('status', ['RETURNED', 'BORROWED'])->default('RETURNED');
             $table->timestamps();
         });
     }

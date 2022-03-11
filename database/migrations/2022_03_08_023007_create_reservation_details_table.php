@@ -15,11 +15,8 @@ class CreateReservationDetailsTable extends Migration
     {
         Schema::create('reservation_details', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('member_id');
-            $table->unsignedBigInteger('staff_id');
+            $table->unsignedBigInteger('reservation_id');
             $table->unsignedBigInteger('book_id');
-            $table->date('reservation_date');
-            $table->date('reversion_date');
         });
     }
 

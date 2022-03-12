@@ -21,6 +21,7 @@ class CreateBooksTable extends Migration
             $table->string('publisher');
             $table->date('publication_date');
             $table->integer('stock');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

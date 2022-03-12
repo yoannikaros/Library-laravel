@@ -41,8 +41,8 @@ Route::prefix('admin')->group(function () {
         Route::get('/logout', [AdminController::class, 'logout'])->name('adminLogout');
         Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
         Route::resource('books', BookController::class);
-        Route::resource('reservations', ReservationController::class);
-        Route::resource('reversions', ReversionController::class);
+        Route::resource('reservations', ReservationController::class)->except(['show']);
+        Route::resource('reversions', ReversionController::class)->except(['show']);
         Route::resource('staffs', StaffController::class)->except('show');
         Route::resource('members', MemberController::class)->except('show');
     });

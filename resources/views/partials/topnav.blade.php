@@ -10,9 +10,6 @@
     </a>
     <div class="dropdown-menu dropdown-menu-right">
       <div class="dropdown-title">Welcome, {{ auth()->user()->name }}</div>
-      <a href="#" class="dropdown-item has-icon">
-        <i class="far fa-user"></i> Profile Settings
-      </a>
       <div class="dropdown-divider"></div>
       <a href="{{ route('adminLogout') }}" class="dropdown-item has-icon text-danger">
         <i class="fas fa-sign-out-alt"></i> Logout

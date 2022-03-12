@@ -18,9 +18,8 @@
                 <table class="table table-striped" id="table-1">
                   <thead>
                     <tr>
-                      <th class="text-center">
-                        #
-                      </th>
+                      <th class="text-center">#</th>
+                      <th>Kode</th>
                       <th>Judul</th>
                       <th>Penulis</th>
                       <th>Penerbit</th>
@@ -31,16 +30,11 @@
                   <tbody>
                     @foreach ($data as $key => $value)
                       <tr>
-                        <td>
-                          {{ $key + 1 }}
-                        </td>
+                        <td> {{ $key + 1 }} </td>
+                        <td> {{ $value->code }}</td>
                         <td> {{ $value->title }}</td>
-                        <td>
-                          {{ $value->author }}
-                        </td>
-                        <td>
-                          {{ $value->publisher }}
-                        </td>
+                        <td> {{ $value->author }} </td>
+                        <td> {{ $value->publisher }} </td>
                         <td> {{ $value->publication_date }}</td>
                         <td class="d-flex">
                           <a href="{{ route('books.edit', $value->id) }}" class="btn btn-icon btn-warning">

@@ -20,6 +20,7 @@ class CreateStaffsTable extends Migration
             $table->string('password', 100);
             $table->string('phone_number', 50)->nullable();
             $table->string('address', 100)->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

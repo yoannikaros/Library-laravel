@@ -14,7 +14,7 @@ class SetRelationsToReversions extends Migration
     public function up()
     {
         Schema::table('reversions', function (Blueprint $table) {
-            $table->foreign('reservation_id')->references('id')->on('reservations')->onDelete('restrict')->onUpdate('cascade');
+            $table->foreign('reservation_id')->references('id')->on('reservations')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('staff_id')->references('id')->on('staffs')->onDelete('restrict')->onUpdate('cascade');
         });
     }

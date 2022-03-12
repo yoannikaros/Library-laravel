@@ -330,6 +330,10 @@ $(function() {
   // Select2
   if(jQuery().select2) {
     $(".select2").select2();
+
+    $(".selectBooks").select2({
+        maximumSelectionLength : 3
+    });
   }
 
   // Selectric

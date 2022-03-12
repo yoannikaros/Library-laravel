@@ -11,9 +11,19 @@
     <div class="dropdown-menu dropdown-menu-right">
       <div class="dropdown-title">Welcome, {{ auth()->user()->name }}</div>
       <div class="dropdown-divider"></div>
-      <a href="{{ route('adminLogout') }}" class="dropdown-item has-icon text-danger">
-        <i class="fas fa-sign-out-alt"></i> Logout
-      </a>
+
+      @auth('staff')
+        <a href="{{ route('adminLogout') }}" class="dropdown-item has-icon text-danger">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+      @endauth
+
+      @auth('member')
+        <a href="{{ route('logout') }}" class="dropdown-item has-icon text-danger">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+      @endauth
+
     </div>
   </li>
 </ul>

@@ -9,15 +9,17 @@
     </div>
 
     <div class="card-body">
-      <form method="POST" action="{{route('handleLogin')}}" class="needs-validation" novalidate="">
+      <form method="POST" action="{{ route('handleLogin') }}" class="needs-validation" novalidate="">
         @csrf
         <div class="form-group">
           <label for="username">Username</label>
-          <input id="username" type="text" class="form-control" name="username" tabindex="1" required autofocus>
+          <input id="username" type="text" class="form-control" name="username" value="{{ old('username') }}"
+            tabindex="1" required autofocus>
           <div class="invalid-feedback">
-            Please fill in your username
+            Username tidak valid
           </div>
         </div>
+
 
         <div class="form-group">
           <div class="d-block">
@@ -25,7 +27,7 @@
           </div>
           <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
           <div class="invalid-feedback">
-            Please fill in your password
+            Password tidak boleh kosong
           </div>
         </div>
 

@@ -1,14 +1,12 @@
 <?php
 
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\akukontroler;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ReversionController;
 use App\Http\Controllers\StaffController;
-use App\Models\Reservation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -27,20 +25,21 @@ Route::get('/', function () {
 
     if (Auth::check()) {
         return redirect(route('dashboard'));
-    }
-
-    return redirect('/login');
+    } else if (Auth::guard('member')->check())
+        return redirect(route('memberDashboard'));
+    else
+        return redirect('/login');
 });
 
 Route::prefix('admin')->group(function () {
-    Route::get('/login', [AdminController::class, 'login'])->middleware('guest')->name('adminLogin');
-    Route::post('/login', [AdminController::class, 'handleLogin'])->middleware('guest')->name('handleLogin');
+    Route::get('/login', [AdminController::class, 'login'])->middleware(['guest', 'guest:member'])->name('adminLogin');
+    Route::post('/login', [AdminController::class, 'handleLogin'])->middleware(['guest', 'guest:member'])->name('handleLogin');
 
 
     Route::middleware(['auth'])->group(function () {
         Route::get('/logout', [AdminController::class, 'logout'])->name('adminLogout');
         Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
-        Route::resource('books', BookController::class);
+        Route::resource('books', BookController::class)->except(['show']);
         Route::resource('reservations', ReservationController::class)->except(['show']);
         Route::resource('reversions', ReversionController::class)->except(['show']);
         Route::resource('staffs', StaffController::class)->except('show');
@@ -48,24 +47,31 @@ Route::prefix('admin')->group(function () {
     });
 });
 
-Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
-Route::get('/register', [AuthController::class, 'register'])->name('register')->middleware('guest');
-
-//route beranda,peminjaman,book untuk member
-Route::get('/beranda', function () {
-    return view('member.beranda', [
-        'title => beranda'
-    ]);
+Route::middleware(['guest', 'guest:member'])->group(function () {
+    Route::get('/login', [AuthController::class, 'login'])->name('login');
+    Route::get('/register', [AuthController::class, 'register'])->name('register');
+    Route::post('/login', [AuthController::class, 'handleLogin'])->name('handleLogin');
 });
 
-Route::get('/riwayat', function () {
-    return view('member.history', [
-        'title => history'
-    ]);
-});
+Route::middleware(['auth:member'])->group(function () {
+    //route beranda,peminjaman,book untuk member
+    Route::get('/dashboard', function () {
+        return view('member.beranda', [
+            'title => beranda'
+        ]);
+    })->name('memberDashboard');
 
-Route::get('/peminjaman', function () {
-    return view('member.peminjaman', [
-        'title => peminjaman'
-    ]);
+    Route::get('/riwayat', function () {
+        return view('member.history', [
+            'title => history'
+        ]);
+    });
+
+    Route::get('/peminjaman', function () {
+        return view('member.peminjaman', [
+            'title => peminjaman'
+        ]);
+    });
+
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });

@@ -19,6 +19,7 @@ require('bootstrap');
 require('datatables.net-bs4');
 require('jquery.nicescroll');
 require('bootstrap-daterangepicker');
+require('select2');
 
 require('./stisla/stisla');
 require('./stisla/scripts');

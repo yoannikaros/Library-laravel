@@ -20,7 +20,7 @@ class CreateReservationsTable extends Migration
             $table->unsignedBigInteger('staff_id');
             $table->date('reservation_date')->default(now());
             $table->date('reversion_date');
-            $table->enum('status', ['RETURNED', 'BORROWED'])->default('RETURNED');
+            $table->enum('status', ['RETURNED', 'BORROWED'])->default('BORROWED');
             $table->timestamps();
         });
     }

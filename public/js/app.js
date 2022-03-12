@@ -38,6 +38,8 @@ __webpack_require__(/*! jquery.nicescroll */ "./node_modules/jquery.nicescroll/j
 
 __webpack_require__(/*! bootstrap-daterangepicker */ "./node_modules/bootstrap-daterangepicker/daterangepicker.js");
 
+__webpack_require__(/*! select2 */ "./node_modules/select2/dist/js/select2.js");
+
 __webpack_require__(/*! ./stisla/stisla */ "./resources/js/stisla/stisla.js");
 
 __webpack_require__(/*! ./stisla/scripts */ "./resources/js/stisla/scripts.js");

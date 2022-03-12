@@ -15,7 +15,7 @@ class SetRelationsToReservationDetails extends Migration
     {
         Schema::table('reservation_details', function (Blueprint $table) {
             $table->foreign('book_id')->references('id')->on('books')->onDelete('restrict')->onUpdate('cascade');
-            $table->foreign('reservation_id')->references('id')->on('reservations')->onDelete('restrict')->onUpdate('cascade');
+            $table->foreign('reservation_id')->references('id')->on('reservations')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

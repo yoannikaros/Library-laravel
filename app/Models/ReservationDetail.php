@@ -11,6 +11,8 @@ class ReservationDetail extends Model
 
     protected $guarded = ['id'];
 
+    public $timestamps = false;
+
     public function book()
     {
         return $this->belongsTo(Book::class);

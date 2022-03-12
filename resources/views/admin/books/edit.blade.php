@@ -42,7 +42,7 @@
 
               <div class="form-group">
                 <label for="stock">Jumlah stok</label>
-                <input id="stock" type="number value="{{ $book->stock }}" name="stock" class="form-control">
+                <input id="stock" type="number" value="{{ $book->stock }}" name="stock" class="form-control">
               </div>
 
 

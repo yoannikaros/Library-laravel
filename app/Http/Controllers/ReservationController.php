@@ -23,7 +23,7 @@ class ReservationController extends Controller
     public function create()
     {
         $members = Member::all(['id', 'name']);
-        $books = Book::all(['id', 'title', 'code']);
+        $books = Book::where('stock', '!=', 0)->get(['id', 'title', 'code']);
         return view('admin.reservations.create', compact('books', 'members'));
     }
 
@@ -48,6 +48,9 @@ class ReservationController extends Controller
         $reservation->update();
 
         foreach ($request->books as $book) {
+
+            Book::find($book)->decrement('stock');
+
             ReservationDetail::create(
                 [
                     'reservation_id' => $reservation['id'],
@@ -107,6 +110,10 @@ class ReservationController extends Controller
 
     public function destroy(Reservation $reservation)
     {
+        foreach ($reservation->details as $detail) {
+            $detail->book->increment('stock');
+        }
+
         $reservation->delete();
         return redirect(route('reservations.index'));
     }

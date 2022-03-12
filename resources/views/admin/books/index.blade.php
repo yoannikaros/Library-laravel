@@ -24,6 +24,7 @@
                       <th>Penulis</th>
                       <th>Penerbit</th>
                       <th>Tanggal Terbit</th>
+                      <th>Stok</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
@@ -36,6 +37,7 @@
                         <td> {{ $value->author }} </td>
                         <td> {{ $value->publisher }} </td>
                         <td> {{ $value->publication_date }}</td>
+                        <td> {{ $value->stock }}</td>
                         <td class="d-flex">
                           <a href="{{ route('books.edit', $value->id) }}" class="btn btn-icon btn-warning">
                             <i class="fa fa-edit"></i>

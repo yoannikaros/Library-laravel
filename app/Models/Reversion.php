@@ -9,6 +9,8 @@ class Reversion extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'reservation_id';
+    public $incrementing = false;
     protected $guarded = ['id'];
 
     public function reservation()

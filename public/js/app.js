@@ -676,6 +676,18 @@ $(function () {
       });
     }
 
+    if ($(".datepickerReversions").length) {
+      $('.datepickerReversions').daterangepicker({
+        locale: {
+          format: 'YYYY-MM-DD'
+        },
+        singleDatePicker: true,
+        drops: 'bottom',
+        autoApply: true,
+        showDropdowns: true
+      });
+    }
+
     if ($(".datetimepicker").length) {
       $('.datetimepicker').daterangepicker({
         locale: {

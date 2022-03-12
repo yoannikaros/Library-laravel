@@ -43,6 +43,21 @@ class ReversionController extends Controller
         $reversion->update();
 
         return redirect(route('reversions.index'));
+    }
 
+    public function edit(Reversion $reversion)
+    {
+        return view(('admin.reversions.edit'), compact('reversion'));
+    }
+
+    public function update(Request $request, Reversion $reversion)
+    {
+        $data = $request->validate([
+            'return_date' => 'required'
+        ]);
+
+        $reversion->update($data);
+
+        return redirect(route('reversions.index'));
     }
 }

@@ -39,7 +39,11 @@
                       <td>{{ $reversion->reservation->member->name }}</td>
                       <td>{{ $reversion->reservation->reservation_date }}</td>
                       <td>{{ $reversion->return_date }}</td>
-                      <td><a href="#" class="btn btn-secondary">Detail</a></td>
+                      <td>
+                        <a href="{{ route('reversions.edit', $reversion->reservation_id) }}" class="btn btn-icon btn-warning">
+                          <i class="fa fa-edit"></i>
+                        </a>
+                      </td>
                     </tr>
                     @endforeach
                   </tbody>

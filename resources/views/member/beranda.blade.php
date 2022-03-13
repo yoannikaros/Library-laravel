@@ -13,6 +13,8 @@
         <div class="card-body">
 
           <!-- Displaying Products Start -->
+@foreach ($data as $value)
+
 
           <div class="card col-3 p-3 mb-2  bg-light">
             <div class="card-header ">
@@ -27,7 +29,7 @@
           </div>
 
 
-
+          @endforeach
           <!-- Displaying Products End -->
 
 

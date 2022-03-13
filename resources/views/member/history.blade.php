@@ -23,6 +23,7 @@
                       <th>Judul</th>
                       <th>Penulis</th>
                       <th>Penerbit</th>
+                      <th>Tanggal Pinjam</th>
                     </tr>
                   </thead>
                   <tbody>

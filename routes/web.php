@@ -33,7 +33,7 @@ Route::get('/', function () {
 
 Route::prefix('admin')->group(function () {
     Route::get('/login', [AdminController::class, 'login'])->middleware(['guest', 'guest:member'])->name('adminLogin');
-    Route::post('/login', [AdminController::class, 'handleLogin'])->middleware(['guest', 'guest:member'])->name('handleLogin');
+    Route::post('/login', [AdminController::class, 'handleLogin'])->middleware(['guest', 'guest:member'])->name('handleAdminLogin');
 
 
     Route::middleware(['auth'])->group(function () {

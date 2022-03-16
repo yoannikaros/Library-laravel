@@ -63,3 +63,4 @@ Route::middleware(['auth:member'])->group(function () {
 
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
+//selesai faiq

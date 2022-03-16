@@ -9,7 +9,7 @@
     </div>
 
     <div class="card-body">
-      <form method="POST" action="{{ route('handleLogin') }}" class="needs-validation" novalidate="">
+      <form method="POST" action="{{ route('handleAdminLogin') }}" class="needs-validation" novalidate="">
         @csrf
         <div class="form-group">
           <label for="username">Username</label>

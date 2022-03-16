@@ -16,7 +16,7 @@ class Reservation extends Model
         return $this->hasMany(ReservationDetail::class, 'reservation_id');
     }
 
-    public function reservation()
+    public function reversion()
     {
         return $this->hasOne(Reversion::class);
     }

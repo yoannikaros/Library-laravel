@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ReversionController;
@@ -54,24 +55,11 @@ Route::middleware(['guest', 'guest:member'])->group(function () {
 });
 
 Route::middleware(['auth:member'])->group(function () {
-    //route beranda,peminjaman,book untuk member
-    Route::get('/dashboard', function () {
-        return view('member.beranda', [
-            'title => beranda'
-        ]);
-    })->name('memberDashboard');
+    Route::get('/home', [HomeController::class, 'index'])->name('memberIndex');
 
-    Route::get('/riwayat', function () {
-        return view('member.history', [
-            'title => history'
-        ]);
-    });
+    Route::get('/reservations', [HomeController::class, 'reservations'])->name('memberReservations');
 
-    Route::get('/peminjaman', function () {
-        return view('member.peminjaman', [
-            'title => peminjaman'
-        ]);
-    });
+    Route::get('/reversions', [HomeController::class, 'reversions'])->name('memberReversions');
 
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });

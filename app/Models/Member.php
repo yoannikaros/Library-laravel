@@ -24,7 +24,7 @@ class Member extends Authenticatable
 
     public function reversions()
     {
-        return $this->hasMany(Reservation::class);
+        return $this->hasMany(Reversion::class);
     }
 
     public static function boot()

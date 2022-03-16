@@ -30,15 +30,15 @@
 
     @auth('member')
       <li class="menu-header">Member</li>
-      <li class="{{ request()->routeIs('title') ? 'active' : '' }}"><a href="/beranda"><i
+      <li class="{{ request()->routeIs('memberIndex') ? 'active' : '' }}"><a href="{{route('memberIndex')}}"><i
             class="fas fa-user-friends"></i>
           <span>Beranda</span></a></li>
 
-      <li class="{{ request()->routeIs('title') ? 'active' : '' }}">
-        <a href="/peminjaman"><i class="fas fa-book-open"></i> <span>Peminjaman</span></a>
+      <li class="{{ request()->routeIs('memberReservations') ? 'active' : '' }}">
+        <a href="{{route('memberReservations')}}"><i class="fas fa-book-open"></i> <span>Riwayat Peminjaman</span></a>
       </li>
-      <li class="{{ request()->routeIs('title') ? 'active' : '' }}">
-        <a href="/riwayat"><i class="fas fa-book-open"></i> <span>Riwayat</span></a>
+      <li class="{{ request()->routeIs('memberReversions') ? 'active' : '' }}">
+        <a href="{{route('memberReversions')}}"><i class="fas fa-book-open"></i> <span>Riwayat Pengembalian</span></a>
       </li>
     @endauth
 

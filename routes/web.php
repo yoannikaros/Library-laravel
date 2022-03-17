@@ -27,7 +27,7 @@ Route::get('/', function () {
     if (Auth::check()) {
         return redirect(route('dashboard'));
     } else if (Auth::guard('member')->check())
-        return redirect(route('memberDashboard'));
+        return redirect(route('memberIndex'));
     else
         return redirect('/login');
 });
